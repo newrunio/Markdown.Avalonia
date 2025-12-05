@@ -30,7 +30,8 @@ namespace Markdown.Avalonia.Extensions
             IBinding left;
             if (Color.TryParse(_frmKey, out var leftColor))
             {
-                left = new StaticBinding(leftColor);
+                // left = new StaticBinding(leftColor);
+                left = new Binding { Source = new SolidColorBrush(leftColor), Mode = BindingMode.OneTime };
             }
             else
             {
@@ -41,7 +42,8 @@ namespace Markdown.Avalonia.Extensions
             IBinding right;
             if (Color.TryParse(_toKey, out var rightColor))
             {
-                right = new StaticBinding(rightColor);
+                // right = new StaticBinding(rightColor);
+                right = new Binding { Source = new SolidColorBrush(rightColor), Mode = BindingMode.OneTime };
             }
             else
             {
